@@ -1,8 +1,12 @@
 mnum = 0
 msum = 0
-
+counter = 0
 while True:
-    n = int(input('Введи целое число: '))
+    try:
+        n = int(input('Введи целое число: ')) 
+    except ValueError:
+        print('Введенный символ не является целым числом')
+        continue
     if n == 0:
         break
     m = n
@@ -13,5 +17,5 @@ while True:
     if s > msum:
         mnum = m
         msum = s
-
-print(f'Число с максимальной суммой цифр {mnum} Сумма цифр этого числа {msum}')
+if counter > 0:
+    print(f'Число с максимальной суммой цифр {mnum} Сумма цифр этого числа {msum}')
